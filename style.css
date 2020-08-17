@@ -1,0 +1,188 @@
+* {
+	box-sizing: border-box;
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Monoton;
+	background: rgb(55, 35, 35);
+	color: #FF1177;
+}
+
+h1 {
+	font-size: 85px;
+	padding-top: 60px;
+	text-align: center;
+	animation: neon 7.5s infinite;
+	word-spacing: 5px;
+	margin-bottom: 100px;
+}
+
+.clock {
+	width: 300px;
+	height: 300px;
+	border-radius: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.clock::after {
+	content: "";
+	position: absolute;
+	background: rgb(55, 35, 35);
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+.clock::before {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	background: #FF1177;
+	width: 105%;
+	height: 105%;
+	border-radius: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: neonBox infinite 15s;
+}
+
+.clock span {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 35px;
+  text-shadow: 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;	
+}
+
+.clock span:nth-child(1) {
+	top: calc(100% - (30 - 5 * 1) * (100% / 30) - 5px);
+	left: calc(50% + (5 * 1) * (50% / 15) + 10px);
+}
+
+.clock span:nth-child(2) {
+	top: calc(100% - (30 - 5 * 2) * (100% / 30) - 10px);
+	left: calc(50% + (5 * 2) * (50% / 15) + 5px);
+}
+
+.clock span:nth-child(3) {
+	top: calc(100% - (30 - 5 * 3) * (100% / 30));
+	left: calc(50% + (5 * 3) * (50% / 15) - 18px);
+}
+
+.clock span:nth-child(4) {
+	top: calc(100% - (30 - 5 * 4) * (100% / 30) + 10px);
+	left: calc(100% - (5 * 1) * (50% / 15) + 10px);
+}
+
+.clock span:nth-child(5) {
+	top: calc(100% - (30 - 5 * 5) * (100% / 30) + 5px);
+	left: calc(100% - (5 * 2) * (50% / 15) + 10px);
+}
+
+.clock span:nth-child(6) {
+	top: calc(100% - (-30 + 5 * 6) * (100% / 30) - 20px);
+	left: calc(100% - (5 * 3) * (50% / 15));
+}
+
+.clock span:nth-child(7) {
+	top: calc(100% - (-30 + 5 * 7) * (100% / 30) + 5px);
+	left: calc(50% - (5 * 1) * (50% / 15) - 10px);
+}
+
+.clock span:nth-child(8) {
+	top: calc(100% - (-30 + 5 * 8) * (100% / 30) + 10px);
+	left: calc(50% - (5 * 2) * (50% / 15) - 10px);
+}
+
+.clock span:nth-child(9) {
+	top: calc(100% - (-30 + 5 * 9) * (100% / 30));
+	left: calc(50% - (5 * 3) * (50% / 15) + 18px);
+}
+
+.clock span:nth-child(10) {
+	top: calc(100% - (-30 + 5 * 10) * (100% / 30) - 10px);
+	left: calc((5 * 1) * (50% / 15) - 5px);
+}
+
+.clock span:nth-child(11) {
+	top: calc(100% - (-30 + 5 * 11) * (100% / 30) - 5px);
+	left: calc((5 * 2) * (50% / 15) - 10px);
+}
+
+.clock span:nth-child(12) {
+	top: calc(100% - (-30 + 5 * 12) * (100% / 30) + 20px);
+	left: calc((5 * 3) * (50% / 15));
+}
+
+.circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	background: #FF1177;
+	animation: neonBox 10s infinite;
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform-origin: top left;
+}
+
+.h, .min, .sec {
+	background: #FF1177;
+	animation: neonBox 10s infinite;	
+}
+
+.h {
+	height: 10px;
+	width: 26%;
+}
+
+.min {
+	height: 6px;
+	width: 34%;
+}
+
+.sec {
+	height: 2px;
+	width: 36%;
+}
+
+
+@keyframes neonBox {
+  from {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+  50% {
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #FF1177, 0 0 16px #FF1177, 0 0 20px #FF1177, 0 0 25px #FF1177, 0 0 37px #FF1177;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  50% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+}
